@@ -4,24 +4,33 @@ import { FirstComponentComponent } from './components/first-component/first-comp
 import { ListRenderComponent } from './components/list-render/list-render.component';
 import { IfRenderComponent } from './components/if-render/if-render.component';
 import { EmitterComponent } from './components/emitter/emitter.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 
 const routes: Routes = [
   {
-    path: '', component: FirstComponentComponent
+    path: '',
+    component: FirstComponentComponent,
   },
   {
-    path: 'list', component: ListRenderComponent
+    path: 'list',
+    component: ListRenderComponent,
   },
   {
-    path: 'if', component: IfRenderComponent
+    path: 'list/:id',
+    component: ItemDetailComponent,
   },
   {
-    path: 'event', component: EmitterComponent
+    path: 'if',
+    component: IfRenderComponent,
+  },
+  {
+    path: 'event',
+    component: EmitterComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
